@@ -18,9 +18,9 @@ export const StatDisplay = () => {
         <div class="stat-display">
             {globalState.confirmed && globalState.recovered && globalState.deaths ? 
             <React.Fragment>
-                <div class="stat-display-item"><h2>Confirmed: <span>{ formatNumber(globalState.confirmed) }</span></h2></div>
-                <div class="stat-display-item"><h2>Recovered: <span>{ formatNumber(globalState.recovered) }</span></h2></div>
-                <div class="stat-display-item"><h2>Deaths: <span>{ formatNumber(globalState.deaths) }</span></h2></div>
+                <div class="stat-display-item confirmed"><h2>Confirmed: <br /> <span>{ formatNumber(globalState.confirmed) }</span></h2></div>
+                <div class="stat-display-item recovered"><h2>Recovered: <br /> <span>{ formatNumber(globalState.recovered) }</span></h2></div>
+                <div class="stat-display-item deaths"><h2>Deaths: <br /> <span>{ formatNumber(globalState.deaths) }</span></h2></div>
             </React.Fragment>
             : null}
         </div>

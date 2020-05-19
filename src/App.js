@@ -9,8 +9,9 @@ function App() {
   return (
     <GlobalProvider>
       <div className="App">
-        <StatDisplay />
+        <h1 className="title">COVID-TRACKER</h1>
         <CountrySelector />
+        <StatDisplay />
       </div>
     </GlobalProvider>
   );
