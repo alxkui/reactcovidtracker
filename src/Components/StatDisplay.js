@@ -14,7 +14,14 @@ export const StatDisplay = () => {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
 
+    const getDate = (date) => {
+        let formatedDate = new Date(date);
+        return formatedDate.toLocaleString();
+    }
+
     return (
+        <React.Fragment>
+        <span className="last-update">Last Updated: { getDate(globalState.lastUpdate) }</span>
         <div class="stat-display">
             {globalState.confirmed && globalState.recovered && globalState.deaths ? 
             <React.Fragment>
@@ -24,5 +31,6 @@ export const StatDisplay = () => {
             </React.Fragment>
             : null}
         </div>
+        </React.Fragment>
     )
 }

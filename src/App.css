@@ -69,3 +69,15 @@ body {
 .confirmed span {color: #f1c40f}
 .deaths span {color: #e74c3c}
 .recovered span {color: #2ecc71}
+
+.chart {
+    margin: 2em 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.last-update {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin: 1.5em 0;
+}

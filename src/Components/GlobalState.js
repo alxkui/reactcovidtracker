@@ -7,7 +7,8 @@ const initialState = {
     recovered: null,
     deaths: null,
     loading: false,
-    errors: []
+    errors: [],
+    lastUpdate: null
 }
 
 // Context
@@ -24,6 +25,8 @@ const reducer = (state, action) => {
             return {...state, deaths: action.payload}
         case "GET_COUNTRIES":
             return {...state, countries: action.payload}
+        case "GET_DATE":
+            return {...state, lastUpdate: action.payload}
         default:
             return state;
     }
@@ -82,6 +85,11 @@ export const GlobalProvider = ({ children }) => {
                         type: "GET_DEATHS",
                         payload: res.data.deaths.value
                     });
+
+                    dispatch({
+                        type: "GET_DATE",
+                        payload: res.data.lastUpdate
+                    });
                 });
 
             }
@@ -103,6 +111,11 @@ export const GlobalProvider = ({ children }) => {
                         type: "GET_DEATHS",
                         payload: res.data.deaths.value
                     });
+
+                    dispatch({
+                        type: "GET_DATE",
+                        payload: res.data.lastUpdate
+                    });
                 });
 
             }
@@ -120,7 +133,8 @@ export const GlobalProvider = ({ children }) => {
             countries: state.countries,
             confirmed: state.confirmed,
             recovered: state.recovered,
-            deaths: state.deaths
+            deaths: state.deaths,
+            lastUpdate: state.lastUpdate
         }}>
             { children }
         </GlobalContext.Provider>
